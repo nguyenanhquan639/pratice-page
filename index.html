@@ -10,11 +10,24 @@
 </head>
 <body>
     <a href=""><img id="logo" src="images/weblogo.png"></a>
-    <div>
-        <span><a href="" class="top-btn">HOME</a></span>
-        <span><a href="" class="top-btn">SERVICES</a></span>
-        <span><a href="" class="top-btn">ABOUT</a></span>
-        <span><a href="" class="top-btn">CONTACT</a></span>
+    <div id="top-bar">
+        <div class="top-control-item">
+            <a href="" class="top-btn">HOME</a>
+        </div>
+        <div class="top-control-item" id="dropdown">
+            <a href="" class="top-btn">SERVICES</a>
+            <div id="dropdown-content">
+                <a href="#"><b>CALLIGRAPHY</b></a>
+                <a href="#"><b>PORTRAIT ART</b></a>
+                <a href="#"><b>PYROGRAPHY</b></a>
+              </div>
+        </div>
+        <div class="top-control-item">
+            <a href="" class="top-btn">ABOUT</a>
+        </div>
+        <div class="top-control-item">
+            <a href="" class="top-btn">CONTACT</a>
+        </div>
     </div>
 
     <img src="images/picture-1.jpeg" class="picture">
@@ -38,6 +51,8 @@
         <a class="bot-btn" href="">CONTACT</a>
     </div>
 
+</body>
+<footer>
     <hr class="custom-line">
 
     <div id="find-me">
@@ -51,9 +66,9 @@
 
     <hr class="custom-line">
 
-</body>
-<footer id="footer">
-    <p id="footer-name">© 2019 Kristen Lee Calligraphy</p>
-    <a class="custom-icon" id="footer-tag" href="">Bear Branded Website #builtbybears</a>
+    <div id="footer">
+        <p id="footer-name">© 2019 Kristen Lee Calligraphy</p>
+        <a class="custom-icon" id="footer-tag" href="https://www.bearbranded.com/" target="_blank">Bear Branded Website #builtbybears</a>
+    </div>
 </footer>
 </html>

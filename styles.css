@@ -6,13 +6,58 @@ body {
 #logo {
     width: 30%;
     padding: 2%;
+    margin-bottom: 1.5%;
 }
+
+#top-bar {
+    display:flex;
+    justify-content: center;
+    
+}
+
+.top-control-item {
+    margin: 0 2%;
+}
+
+/* --- DROP DOWN --- */
+#dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+#dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 180%;
+    z-index: 1;
+    transition: 0.5s;
+  }
+
+#dropdown-content a {
+    color: gray;
+    padding: 8%;
+    text-decoration: none;
+    display: block;
+    transition: 0.2s;
+    font-size: 90%;
+    background-color: blanchedalmond;
+}
+
+#dropdown-content a:hover {color: black;}
+#dropdown:hover #dropdown-content {display: block;}
+/* --- DROP DOWN --- */
 
 .top-btn {
     text-decoration: none;
     color: gray;
-    margin: 1.5%;
-    font-size: 110%;
+    font-size: 130%;
+    transition: 0.5s;
+}
+
+.top-btn:hover {
+    color: black;
+    
 }
 
 .picture {
