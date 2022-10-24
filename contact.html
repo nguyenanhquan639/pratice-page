@@ -20,7 +20,7 @@
     <title>Practice Page</title>
   </head>
   <body>
-    <a href="index.html"><img id="logo" src="./images/weblogo.png" /></a>
+    <a href="index.html"><img id="logo" src="images/weblogo.png" /></a>
     <div id="top-bar">
       <div class="top-control-item">
         <a href="index.html" class="top-btn">HOME</a>
@@ -41,30 +41,53 @@
       </div>
     </div>
 
-    <img src="images/picture-1.jpeg" class="picture" />
+    <form action="" id="form">
+      <label for="">Name *</label>
+      <div class="row-pos">
+        <div class="colum-pos">
+          <input type="text" />
+          <label for="">First name</label>
+        </div>
+        <div class="colum-pos">
+          <input type="text" />
+          <label for="">Last name</label>
+        </div>
+      </div>
+      <label for="">Email *</label>
+      <div>
+        <input type="text" />
+      </div>
+      <label for="">Service *</label>
+      <div>
+        <select name="" id="">
+          <option value="">Select</option>
+          <option value="">Calligraphy</option>
+          <option value="">Day Of Goods</option>
+          <option value="">Portrait Art</option>
+          <option value="">Pyrography</option>
+        </select>
+      </div>
+      <label for="">Description of Project *</label>
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+      <label for="">Desired Project Completion Date *</label>
+      <div class="row-pos">
+        <div class="colum-pos">
+          <input type="text" />
+          <label for="">MM</label>
+        </div>
+        <div class="colum-pos">
+          <input type="text" />
+          <label for="">DD</label>
+        </div>
+        <div class="colum-pos">
+          <input type="text" />
+          <label for="">YY</label>
+        </div>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
 
-    <div id="quote-1">
-      <p>“THIS WORLD IS BUT A CANVAS TO OUR IMAGINATION.”</p>
-      <p>
-        <b><i>Henry David Thoreau</i></b>
-      </p>
-    </div>
-
-    <div>
-      <img src="images/picture-2.jpg" class="picture" height="600" />
-    </div>
-
-    <div id="quote-2">
-      <p>"ALONE WE CAN DO SO LITTLE, TOGETHER WE CAN DO SO MUCH.”</p>
-      <p>
-        <b><i>Helen Keller</i></b>
-      </p>
-    </div>
-
-    <div id="bot-control">
-      <a class="bot-btn" href="about.html">ABOUT</a>
-      <a class="bot-btn" href="">CONTACT</a>
-    </div>
+    <img src="./images/thankyou.jpg" width="50%" />
   </body>
   <footer>
     <hr class="custom-line" />

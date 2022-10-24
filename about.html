@@ -1,71 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FONT -->
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://kit.fontawesome.com/be15bfe2c6.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/be15bfe2c6.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Practice Page</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- HEAD SECTION -->
-    <a href=""><img id="logo" src="images/weblogo.png"></a>
+    <a href="index.html"><img id="logo" src="images/weblogo.png" /></a>
     <div id="top-bar">
-        <div class="top-control-item">
-            <a href="index.html" class="top-btn">HOME</a>
+      <div class="top-control-item">
+        <a href="index.html" class="top-btn">HOME</a>
+      </div>
+      <div class="top-control-item" id="dropdown">
+        <a href="calligraphy.html" class="top-btn">SERVICES</a>
+        <div id="dropdown-content">
+          <a href="calligraphy.html"><b>CALLIGRAPHY</b></a>
+          <a href="portrait.html"><b>PORTRAIT ART</b></a>
+          <a href="pyrography.html"><b>PYROGRAPHY</b></a>
         </div>
-        <div class="top-control-item" id="dropdown">
-            <a href="calligraphy.html" class="top-btn">SERVICES</a>
-            <div id="dropdown-content">
-                <a href="calligraphy.html"><b>CALLIGRAPHY</b></a>
-                <a href="#"><b>PORTRAIT ART</b></a>
-                <a href="#"><b>PYROGRAPHY</b></a>
-              </div>
-        </div>
-        <div class="top-control-item">
-            <a href="" class="top-btn">ABOUT</a>
-        </div>
-        <div class="top-control-item">
-            <a href="" class="top-btn">CONTACT</a>
-        </div>
+      </div>
+      <div class="top-control-item">
+        <a href="about.html" class="top-btn">ABOUT</a>
+      </div>
+      <div class="top-control-item">
+        <a href="contact.html" class="top-btn">CONTACT</a>
+      </div>
     </div>
 
     <!-- BODY SECTION -->
     <div id="about-section">
-        <p>Kristen Lee Calligraphy and Fine Art is the professional work of Boston based artist Kristen Lee, specializing in classic and modern calligraphy and hand lettering,
-            photo realism portrait art as well as a handful of other various artistic mediums. </p>
-        <br>
-       <p>Eschewing any single style, Kristen's design philosophy is based upon the order and proportion of timeless design principles.
-            She is a lifelong student and self taught artist and calligrapher, who brings 20+ years of artistic experience and knowledge to her work. </p>
-       <br>
-        <p>Offering a variety of services, Kristen welcomes you to her site and encourages you to view her work,
-         and fill out the contact form for questions, pricing, custom design or collaborations.</p>
-    </div>
-    
-    <div id="bot-control">
-        <a class="bot-btn" href="">CONTACT</a>
+      <p>
+        Kristen Lee Calligraphy and Fine Art is the professional work of Boston
+        based artist Kristen Lee, specializing in classic and modern calligraphy
+        and hand lettering, photo realism portrait art as well as a handful of
+        other various artistic mediums.
+      </p>
+      <br />
+      <p>
+        Eschewing any single style, Kristen's design philosophy is based upon
+        the order and proportion of timeless design principles. She is a
+        lifelong student and self taught artist and calligrapher, who brings 20+
+        years of artistic experience and knowledge to her work.
+      </p>
+      <br />
+      <p>
+        Offering a variety of services, Kristen welcomes you to her site and
+        encourages you to view her work, and fill out the contact form for
+        questions, pricing, custom design or collaborations.
+      </p>
     </div>
 
-</body>
-<!-- FOOTER SECTION -->
-<footer>
-    <hr class="custom-line">
+    <div id="bot-control">
+      <a class="bot-btn" href="">CONTACT</a>
+    </div>
+  </body>
+  <!-- FOOTER SECTION -->
+  <footer>
+    <hr class="custom-line" />
 
     <div id="find-me">
-        <img src="./images/findmehere.png" id="find-me-img">
-        <div id="find-me-icon">
-            <a class="custom-icon" href="https://www.facebook.com/profile.php?id=100034744132544" target="_blank"><i class="fa-brands fa-facebook-f fa-2x"></i></a>
-            <a class="custom-icon" href="https://www.instagram.com/kristenleecalligraphy/" target="_blank"><i class="fa-brands fa-instagram fa-2x"></i></a>
-            <a class="custom-icon" href="#"><i class="fa-brands fa-github fa-2x"></i></a>
-        </div>
+      <img src="./images/findmehere.png" id="find-me-img" />
+      <div id="find-me-icon">
+        <a
+          class="custom-icon"
+          href="https://www.facebook.com/profile.php?id=100034744132544"
+          target="_blank"
+          ><i class="fa-brands fa-facebook-f fa-2x"></i
+        ></a>
+        <a
+          class="custom-icon"
+          href="https://www.instagram.com/kristenleecalligraphy/"
+          target="_blank"
+          ><i class="fa-brands fa-instagram fa-2x"></i
+        ></a>
+        <a class="custom-icon" href="#"
+          ><i class="fa-brands fa-github fa-2x"></i
+        ></a>
+      </div>
     </div>
 
-    <hr class="custom-line">
+    <hr class="custom-line" />
 
     <div id="footer">
-        <p id="footer-name">© 2019 Kristen Lee Calligraphy</p>
-        <a class="custom-icon" id="footer-tag" href="https://www.bearbranded.com/" target="_blank">Bear Branded Website #builtbybears</a>
+      <p id="footer-name">© 2019 Kristen Lee Calligraphy</p>
+      <a
+        class="custom-icon"
+        id="footer-tag"
+        href="https://www.bearbranded.com/"
+        target="_blank"
+        >Bear Branded Website #builtbybears</a
+      >
     </div>
-</footer>
+  </footer>
 </html>
