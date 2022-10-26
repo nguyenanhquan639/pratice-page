@@ -423,23 +423,32 @@ p {
   margin-bottom: 10%;
 }
 
-.wrong-notif {
+/* .wrong-notif {
   background-color: #cc3b3b;
   color: white;
   font-size: 80%;
   padding: 5px 0 5px 12px;
-  text-align: left;
   border-radius: 5px;
   margin-bottom: 2%;
-}
+} */
 
 .wrong-position {
-  transition: 0.5s;
-  width: 40%;
+  text-align: left;
+  margin: 8px 0;
+  background-color: #cc3b3b;
+  border-radius: 5px;
+}
+
+.wrong-notif {
+  color: white;
+  font-size: 80%;
+  padding: 0 20px 20px 10px;
+  width: 100%;
 }
 
 #form-controller {
   display: none;
+  width: 50%;
 }
 
 #name-controller {
@@ -458,17 +467,7 @@ p {
   display: none;
 }
 
-@media only screen and (max-width: 900px) {
-  .wrong-position {
-    width: 80%;
-  }
-}
-
 @media only screen and (max-width: 750px) {
-  .wrong-position {
-    width: 100%;
-  }
-
   #web-interfact {
     display: none;
   }

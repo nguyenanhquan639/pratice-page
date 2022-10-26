@@ -83,7 +83,7 @@
     <!-- FORM SECTION -->
     <form action="" id="form">
       <div class="wrong-position">
-        <p class="wrong-notif" style="width: 100%" id="form-controller">
+        <p id="form-controller" class="wrong-notif">
           <i class="fa-solid fa-xmark"></i> Your form has encountered a problem.
           Please scroll down to review.
         </p>
@@ -91,23 +91,29 @@
 
       <label for="" style="color: grey; margin-top: 1%">Name *</label>
       <div class="wrong-position">
-        <p class="wrong-notif" style="width: 50%" id="name-controller">
+        <p id="name-controller" class="wrong-notif">
           <i class="fa-solid fa-xmark"></i> Name is required.
         </p>
       </div>
       <div class="row-pos">
         <div class="colum-pos">
-          <input type="text" class="custom-input custom-input-hover" />
-          <label class="custom-sub-name" id="first-name-controller"
-            >First name</label
-          >
+          <input
+            type="text"
+            class="custom-input custom-input-hover"
+            id="first-name-input-controller"
+            value=""
+          />
+          <label class="custom-sub-name">First name</label>
         </div>
         <div style="width: 50%"></div>
         <div class="colum-pos">
-          <input type="text" class="custom-input custom-input-hover" />
-          <label class="custom-sub-name" id="last-name-controller"
-            >Last name</label
-          >
+          <input
+            type="text"
+            class="custom-input custom-input-hover"
+            id="last-name-input-controller"
+            value=""
+          />
+          <label class="custom-sub-name">Last name</label>
         </div>
       </div>
 
@@ -120,7 +126,12 @@
       </div>
       <label for="">Email *</label>
       <div style="width: 100%">
-        <input type="text" class="custom-input custom-input-hover" />
+        <input
+          type="text"
+          class="custom-input custom-input-hover"
+          id="email-input-controller"
+          value=""
+        />
       </div>
 
       <br />
@@ -139,22 +150,23 @@
       <br />
 
       <div class="wrong-position">
-        <p class="wrong-notif" style="width: 80%">
+        <p class="wrong-notif" style="width: 80%" id="descript-controller">
           <i class="fa-solid fa-xmark"></i> Description of Project is required.
         </p>
       </div>
       <label for="">Description of Project *</label>
       <textarea
         name=""
-        id=""
+        id="descript-input-controller"
         class="custom-textarea custom-input-hover"
+        aria-valuetext=""
       ></textarea>
 
       <br />
 
       <label for="">Desired Project Completion Date *</label>
       <div class="wrong-position">
-        <p class="wrong-notif" style="width: 80%">
+        <p class="wrong-notif" style="width: 80%" id="date-controller">
           <i class="fa-solid fa-xmark"></i> Desired Project Completion Date is
           required.
         </p>
@@ -165,8 +177,10 @@
             type="text"
             class="custom-input-date custom-input-hover"
             maxlength="2"
+            id="mm-input-controller"
+            value=""
           />
-          <label for="" class="custom-sub-name">MM</label>
+          <label class="custom-sub-name">MM</label>
         </div>
 
         <div style="width: 5%"></div>
@@ -176,6 +190,8 @@
             type="text"
             class="custom-input-date custom-input-hover"
             maxlength="2"
+            id="dd-input-controller"
+            value=""
           />
           <label for="" class="custom-sub-name">DD</label>
         </div>
@@ -187,6 +203,8 @@
             type="text"
             class="custom-input-date custom-input-hover"
             maxlength="4"
+            id="yy-input-controller"
+            value=""
           />
           <label for="" class="custom-sub-name">YYYY</label>
         </div>
@@ -194,7 +212,9 @@
 
       <br />
 
-      <button type="submit" class="submit-btn">SUBMIT</button>
+      <button type="button" class="submit-btn" onclick="checkValid()">
+        SUBMIT
+      </button>
 
       <br />
     </form>
