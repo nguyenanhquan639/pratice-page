@@ -13,14 +13,53 @@
     />
     <!-- FONT -->
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
     <script
       src="https://kit.fontawesome.com/be15bfe2c6.js"
       crossorigin="anonymous"
     ></script>
-    <title>Practice Page</title>
+    <title>Contact - Kristen Lee Calligraphy Clone</title>
   </head>
+
   <body>
-    <a href="index.html"><img id="logo" src="images/weblogo.png" /></a>
+    <div id="logo-section">
+      <a href="index.html"><img id="logo" src="./images/weblogo.png" /></a>
+
+      <!-- SIDE NAV -->
+      <div id="mySidenav" class="sidenav">
+        <a class="nav-btn" href="index.html">HOME</a>
+        <div class="nav-btn" onclick="changeNav()">
+          SERVICES <i class="fa-solid fa-chevron-right"></i>
+        </div>
+        <a class="nav-btn" href="about.html">ABOUT</a>
+        <a class="nav-btn" href="contact.html">CONTACT</a>
+
+        <div id="mySidenav-2" class="sidenav">
+          <div class="nav-btn" onclick="unchangeNav()">
+            <i class="fa-solid fa-arrow-left-long"></i> BACK
+          </div>
+          <a class="nav-btn" href="calligraphy.html"><b>CALLIGRAPHY</b></a>
+          <a class="nav-btn" href="portrait.html"><b>PORTRAIT ART</b></a>
+          <a class="nav-btn" href="pyrography.html"><b>PYROGRAPHY</b></a>
+        </div>
+      </div>
+
+      <span
+        style="font-size: 30px; cursor: pointer"
+        onclick="openNav()"
+        id="more-btn"
+        ><i class="fa-solid fa-bars"></i
+      ></span>
+
+      <span
+        id="closebtn"
+        style="font-size: 30px; cursor: pointer"
+        onclick="closeNav()"
+        ><i class="fa-solid fa-x"></i
+      ></span>
+      <!-- SIDE NAV -->
+    </div>
+
     <div id="top-bar">
       <div class="top-control-item">
         <a href="index.html" class="top-btn">HOME</a>
@@ -41,25 +80,54 @@
       </div>
     </div>
 
+    <!-- FORM SECTION -->
     <form action="" id="form">
-      <label for="">Name *</label>
+      <div class="wrong-position">
+        <p class="wrong-notif" style="width: 100%" id="form-controller">
+          <i class="fa-solid fa-xmark"></i> Your form has encountered a problem.
+          Please scroll down to review.
+        </p>
+      </div>
+
+      <label for="" style="color: grey; margin-top: 1%">Name *</label>
+      <div class="wrong-position">
+        <p class="wrong-notif" style="width: 50%" id="name-controller">
+          <i class="fa-solid fa-xmark"></i> Name is required.
+        </p>
+      </div>
       <div class="row-pos">
         <div class="colum-pos">
-          <input type="text" />
-          <label for="">First name</label>
+          <input type="text" class="custom-input custom-input-hover" />
+          <label class="custom-sub-name" id="first-name-controller"
+            >First name</label
+          >
         </div>
+        <div style="width: 50%"></div>
         <div class="colum-pos">
-          <input type="text" />
-          <label for="">Last name</label>
+          <input type="text" class="custom-input custom-input-hover" />
+          <label class="custom-sub-name" id="last-name-controller"
+            >Last name</label
+          >
         </div>
+      </div>
+
+      <br />
+
+      <div class="wrong-position">
+        <p class="wrong-notif" style="width: 50%" id="email-controller">
+          <i class="fa-solid fa-xmark"></i> Email is required.
+        </p>
       </div>
       <label for="">Email *</label>
-      <div>
-        <input type="text" />
+      <div style="width: 100%">
+        <input type="text" class="custom-input custom-input-hover" />
       </div>
+
+      <br />
+
       <label for="">Service *</label>
       <div>
-        <select name="" id="">
+        <select name="" id="" class="custom-select custom-input-hover">
           <option value="">Select</option>
           <option value="">Calligraphy</option>
           <option value="">Day Of Goods</option>
@@ -67,27 +135,73 @@
           <option value="">Pyrography</option>
         </select>
       </div>
+
+      <br />
+
+      <div class="wrong-position">
+        <p class="wrong-notif" style="width: 80%">
+          <i class="fa-solid fa-xmark"></i> Description of Project is required.
+        </p>
+      </div>
       <label for="">Description of Project *</label>
-      <textarea name="" id="" cols="30" rows="10"></textarea>
+      <textarea
+        name=""
+        id=""
+        class="custom-textarea custom-input-hover"
+      ></textarea>
+
+      <br />
+
       <label for="">Desired Project Completion Date *</label>
-      <div class="row-pos">
+      <div class="wrong-position">
+        <p class="wrong-notif" style="width: 80%">
+          <i class="fa-solid fa-xmark"></i> Desired Project Completion Date is
+          required.
+        </p>
+      </div>
+      <div class="row-pos-date">
         <div class="colum-pos">
-          <input type="text" />
-          <label for="">MM</label>
+          <input
+            type="text"
+            class="custom-input-date custom-input-hover"
+            maxlength="2"
+          />
+          <label for="" class="custom-sub-name">MM</label>
         </div>
+
+        <div style="width: 5%"></div>
+
         <div class="colum-pos">
-          <input type="text" />
-          <label for="">DD</label>
+          <input
+            type="text"
+            class="custom-input-date custom-input-hover"
+            maxlength="2"
+          />
+          <label for="" class="custom-sub-name">DD</label>
         </div>
+
+        <div style="width: 5%"></div>
+
         <div class="colum-pos">
-          <input type="text" />
-          <label for="">YY</label>
+          <input
+            type="text"
+            class="custom-input-date custom-input-hover"
+            maxlength="4"
+          />
+          <label for="" class="custom-sub-name">YYYY</label>
         </div>
       </div>
-      <button type="submit">Submit</button>
+
+      <br />
+
+      <button type="submit" class="submit-btn">SUBMIT</button>
+
+      <br />
     </form>
 
-    <img src="./images/thankyou.jpg" width="50%" />
+    <img src="./images/thankyou.jpg" id="thankyou-img" />
+
+    <!-- FORM SECTION -->
   </body>
   <footer>
     <hr class="custom-line" />

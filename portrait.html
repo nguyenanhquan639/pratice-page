@@ -13,15 +13,53 @@
     />
     <!-- FONT -->
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
     <script
       src="https://kit.fontawesome.com/be15bfe2c6.js"
       crossorigin="anonymous"
     ></script>
-    <title>Practice Page</title>
+    <title>Portrait Art - Kristen Lee Calligraphy Clone</title>
   </head>
   <body>
-    <!-- HEAD SECTION -->
-    <a href="index.html"><img id="logo" src="images/weblogo.png" /></a>
+    <div id="logo-section">
+      <a href="index.html"><img id="logo" src="./images/weblogo.png" /></a>
+
+      <!-- SIDE NAV -->
+      <div id="mySidenav" class="sidenav">
+        <a class="nav-btn" href="index.html">HOME</a>
+        <div class="nav-btn" onclick="changeNav()">
+          SERVICES <i class="fa-solid fa-chevron-right"></i>
+        </div>
+        <a class="nav-btn" href="about.html">ABOUT</a>
+        <a class="nav-btn" href="contact.html">CONTACT</a>
+
+        <div id="mySidenav-2" class="sidenav">
+          <div class="nav-btn" onclick="unchangeNav()">
+            <i class="fa-solid fa-arrow-left-long"></i> BACK
+          </div>
+          <a class="nav-btn" href="calligraphy.html"><b>CALLIGRAPHY</b></a>
+          <a class="nav-btn" href="portrait.html"><b>PORTRAIT ART</b></a>
+          <a class="nav-btn" href="pyrography.html"><b>PYROGRAPHY</b></a>
+        </div>
+      </div>
+
+      <span
+        style="font-size: 30px; cursor: pointer"
+        onclick="openNav()"
+        id="more-btn"
+        ><i class="fa-solid fa-bars"></i
+      ></span>
+
+      <span
+        id="closebtn"
+        style="font-size: 30px; cursor: pointer"
+        onclick="closeNav()"
+        ><i class="fa-solid fa-x"></i
+      ></span>
+
+      <!-- SIDE NAV -->
+    </div>
+
     <div id="top-bar">
       <div class="top-control-item">
         <a href="index.html" class="top-btn">HOME</a>
@@ -43,23 +81,21 @@
     </div>
 
     <!-- BODY SECTION -->
-    <div class="callipraphy-control-center">
-      <div class="calli-para-center">
-        <p>
-          Black and white graphite and charcoal reproduction of your favorite
-          photo created using graphite pencil and or charcoal on acid free,
-          heavy weight paper, with a light texture, and sealed with a
-          transparent fixative.
-        </p>
-      </div>
-      <br />
-      <div class="calli-para-center">
-        <p>
-          <b>Tips:</b> If you choose to frame your piece, you can go one of two
-          ways, having it framed professionally or DIY. The mat and the frame
-          are the two important choices.
-        </p>
-      </div>
+    <div class="calli-para-center">
+      <p>
+        Black and white graphite and charcoal reproduction of your favorite
+        photo created using graphite pencil and or charcoal on acid free, heavy
+        weight paper, with a light texture, and sealed with a transparent
+        fixative.
+      </p>
+    </div>
+    <br />
+    <div class="calli-para-center">
+      <p>
+        <b>Tips:</b> If you choose to frame your piece, you can go one of two
+        ways, having it framed professionally or DIY. The mat and the frame are
+        the two important choices.
+      </p>
     </div>
 
     <div class="portrait-control">

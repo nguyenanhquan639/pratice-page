@@ -17,11 +17,70 @@
       src="https://kit.fontawesome.com/be15bfe2c6.js"
       crossorigin="anonymous"
     ></script>
-    <title>Practice Page</title>
+    <title>Calligraphy - Kristen Lee Calligraphy</title>
   </head>
   <body>
-    <!-- HEAD SECTION -->
-    <a href="index.html"><img id="logo" src="images/weblogo.png" /></a>
+    <div id="logo-section">
+      <a href="index.html"><img id="logo" src="./images/weblogo.png" /></a>
+
+      <!-- SIDE NAV -->
+      <div id="mySidenav" class="sidenav">
+        <a class="nav-btn" href="index.html">HOME</a>
+        <div class="nav-btn" onclick="changeNav()">
+          SERVICES <i class="fa-solid fa-chevron-right"></i>
+        </div>
+        <a class="nav-btn" href="about.html">ABOUT</a>
+        <a class="nav-btn" href="contact.html">CONTACT</a>
+
+        <div id="mySidenav-2" class="sidenav">
+          <div class="nav-btn" onclick="unchangeNav()">
+            <i class="fa-solid fa-arrow-left-long"></i> BACK
+          </div>
+          <a class="nav-btn" href="calligraphy.html"><b>CALLIGRAPHY</b></a>
+          <a class="nav-btn" href="portrait.html"><b>PORTRAIT ART</b></a>
+          <a class="nav-btn" href="pyrography.html"><b>PYROGRAPHY</b></a>
+        </div>
+      </div>
+
+      <span
+        style="font-size: 30px; cursor: pointer"
+        onclick="openNav()"
+        id="more-btn"
+        ><i class="fa-solid fa-bars"></i
+      ></span>
+
+      <span
+        id="closebtn"
+        style="font-size: 30px; cursor: pointer"
+        onclick="closeNav()"
+        ><i class="fa-solid fa-x"></i
+      ></span>
+
+      <script>
+        function changeNav() {
+          document.getElementById("mySidenav-2").style.width = "85%";
+        }
+
+        function unchangeNav() {
+          document.getElementById("mySidenav-2").style.width = "0";
+        }
+
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "85%";
+          document.getElementById("more-btn").style.display = "none";
+          document.getElementById("closebtn").style.display = "flex";
+        }
+
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("mySidenav-2").style.width = "0";
+          document.getElementById("more-btn").style.display = "flex";
+          document.getElementById("closebtn").style.display = "none";
+        }
+      </script>
+      <!-- SIDE NAV -->
+    </div>
+
     <div id="top-bar">
       <div class="top-control-item">
         <a href="index.html" class="top-btn">HOME</a>
@@ -67,31 +126,27 @@
       <img class="calli-img" src="./images/spot-callipraphy.jpg" />
     </div>
 
-    <div class="callipraphy-control-center">
-      <div class="calli-para-center">
-        <p>
-          <b>PLACE CARDS</b> - traditionally, this was a small folded card
-          placed on the table indicating the guest’s seat. Today people are
-          getting really creative with the materials they are using as well as
-          the formats.
-        </p>
-      </div>
-      <div class="calli-para-center">
-        <p>
-          <b>ESCORT CARDS</b> - typically arranged at the entrance of the
-          reception, these are meant to guide the guest to their table. These
-          can be a creative alternative to a seating chart and give your guests
-          a small meaningful keepsake of a beautiful day.
-        </p>
-      </div>
-      <img
-        class="calli-img"
-        id="placecards-img"
-        src="./images/placecards.jpg"
-      />
-    </div>
+    <br />
 
-    <div class="callipraphy-control-center">
+    <div class="calli-para-center">
+      <p>
+        <b>PLACE CARDS</b> - traditionally, this was a small folded card placed
+        on the table indicating the guest’s seat. Today people are getting
+        really creative with the materials they are using as well as the
+        formats.
+      </p>
+    </div>
+    <div class="calli-para-center">
+      <p>
+        <b>ESCORT CARDS</b> - typically arranged at the entrance of the
+        reception, these are meant to guide the guest to their table. These can
+        be a creative alternative to a seating chart and give your guests a
+        small meaningful keepsake of a beautiful day.
+      </p>
+    </div>
+    <img class="calli-img" id="placecards-img" src="./images/placecards.jpg" />
+
+    <div>
       <div class="calli-para-center">
         <p>
           <b>PROGRAMS</b> - may be as simple as just a card or a more

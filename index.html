@@ -13,14 +13,52 @@
     />
     <!-- FONT -->
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
     <script
       src="https://kit.fontawesome.com/be15bfe2c6.js"
       crossorigin="anonymous"
     ></script>
-    <title>Practice Page</title>
+    <title>Kristen Lee Calligraphy Clone</title>
   </head>
   <body>
-    <a href="index.html"><img id="logo" src="./images/weblogo.png" /></a>
+    <div id="logo-section">
+      <a href="index.html"><img id="logo" src="./images/weblogo.png" /></a>
+
+      <!-- SIDE NAV -->
+      <div id="mySidenav" class="sidenav">
+        <a class="nav-btn" href="index.html">HOME</a>
+        <div class="nav-btn" onclick="changeNav()">
+          SERVICES <i class="fa-solid fa-chevron-right"></i>
+        </div>
+        <a class="nav-btn" href="about.html">ABOUT</a>
+        <a class="nav-btn" href="contact.html">CONTACT</a>
+
+        <div id="mySidenav-2" class="sidenav">
+          <div class="nav-btn" onclick="unchangeNav()">
+            <i class="fa-solid fa-arrow-left-long"></i> BACK
+          </div>
+          <a class="nav-btn" href="calligraphy.html"><b>CALLIGRAPHY</b></a>
+          <a class="nav-btn" href="portrait.html"><b>PORTRAIT ART</b></a>
+          <a class="nav-btn" href="pyrography.html"><b>PYROGRAPHY</b></a>
+        </div>
+      </div>
+
+      <span
+        style="font-size: 30px; cursor: pointer"
+        onclick="openNav()"
+        id="more-btn"
+        ><i class="fa-solid fa-bars"></i
+      ></span>
+
+      <span
+        id="closebtn"
+        style="font-size: 30px; cursor: pointer"
+        onclick="closeNav()"
+        ><i class="fa-solid fa-x"></i
+      ></span>
+      <!-- SIDE NAV -->
+    </div>
+
     <div id="top-bar">
       <div class="top-control-item">
         <a href="index.html" class="top-btn">HOME</a>
@@ -66,6 +104,7 @@
       <a class="bot-btn" href="">CONTACT</a>
     </div>
   </body>
+
   <footer>
     <hr class="custom-line" />
 
