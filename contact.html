@@ -81,7 +81,7 @@
     </div>
 
     <!-- FORM SECTION -->
-    <form action="" id="form">
+    <form action="" id="form" name="form">
       <div class="wrong-position">
         <p id="form-controller" class="wrong-notif">
           <i class="fa-solid fa-xmark"></i> Your form has encountered a problem.
@@ -89,28 +89,30 @@
         </p>
       </div>
 
-      <label for="" style="color: grey; margin-top: 1%">Name *</label>
+      <label for="">Name *</label>
       <div class="wrong-position">
-        <p id="name-controller" class="wrong-notif">
-          <i class="fa-solid fa-xmark"></i> Name is required.
-        </p>
+        <p id="name-controller" class="wrong-notif"></p>
       </div>
       <div class="row-pos">
-        <div class="colum-pos">
+        <div class="colum-pos" id="first-name-controller">
           <input
             type="text"
-            class="custom-input custom-input-hover"
+            class="custom-input"
             id="first-name-input-controller"
+            name="firstname"
             value=""
           />
           <label class="custom-sub-name">First name</label>
         </div>
+
         <div style="width: 50%"></div>
-        <div class="colum-pos">
+
+        <div class="colum-pos" id="last-name-controller">
           <input
             type="text"
-            class="custom-input custom-input-hover"
+            class="custom-input"
             id="last-name-input-controller"
+            name="lastname"
             value=""
           />
           <label class="custom-sub-name">Last name</label>
@@ -120,25 +122,26 @@
       <br />
 
       <div class="wrong-position">
-        <p class="wrong-notif" style="width: 50%" id="email-controller">
-          <i class="fa-solid fa-xmark"></i> Email is required.
+        <p class="wrong-notif" id="email-controller">
+          <i class="fa-solid fa-xmark"></i>
         </p>
       </div>
-      <label for="">Email *</label>
+      <label for="" style="margin-bottom: 15px">Email *</label>
       <div style="width: 100%">
         <input
           type="text"
-          class="custom-input custom-input-hover"
+          class="custom-input"
           id="email-input-controller"
+          name="email"
           value=""
         />
       </div>
 
       <br />
 
-      <label for="">Service *</label>
+      <label for="" style="margin-bottom: 15px">Service *</label>
       <div>
-        <select name="" id="" class="custom-select custom-input-hover">
+        <select name="" id="" class="custom-select">
           <option value="">Select</option>
           <option value="">Calligraphy</option>
           <option value="">Day Of Goods</option>
@@ -150,15 +153,13 @@
       <br />
 
       <div class="wrong-position">
-        <p class="wrong-notif" style="width: 80%" id="descript-controller">
-          <i class="fa-solid fa-xmark"></i> Description of Project is required.
-        </p>
+        <p class="wrong-notif" style="width: 80%" id="descript-controller"></p>
       </div>
-      <label for="">Description of Project *</label>
+      <label for="" style="margin-bottom: 15px">Description of Project *</label>
       <textarea
-        name=""
+        name="description"
         id="descript-input-controller"
-        class="custom-textarea custom-input-hover"
+        class="custom-textarea"
         aria-valuetext=""
       ></textarea>
 
@@ -175,7 +176,7 @@
         <div class="colum-pos">
           <input
             type="text"
-            class="custom-input-date custom-input-hover"
+            class="custom-input-date"
             maxlength="2"
             id="mm-input-controller"
             value=""
@@ -188,7 +189,7 @@
         <div class="colum-pos">
           <input
             type="text"
-            class="custom-input-date custom-input-hover"
+            class="custom-input-date"
             maxlength="2"
             id="dd-input-controller"
             value=""
@@ -201,7 +202,7 @@
         <div class="colum-pos">
           <input
             type="text"
-            class="custom-input-date custom-input-hover"
+            class="custom-input-date"
             maxlength="4"
             id="yy-input-controller"
             value=""
@@ -212,7 +213,11 @@
 
       <br />
 
-      <button type="button" class="submit-btn" onclick="checkValid()">
+      <button
+        type="button"
+        class="submit-btn"
+        onclick="checkValid(document.form.firstname, document.form.lastname, document.form.email, document.form.description)"
+      >
         SUBMIT
       </button>
 

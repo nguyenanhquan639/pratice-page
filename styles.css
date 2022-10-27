@@ -423,15 +423,6 @@ p {
   margin-bottom: 10%;
 }
 
-/* .wrong-notif {
-  background-color: #cc3b3b;
-  color: white;
-  font-size: 80%;
-  padding: 5px 0 5px 12px;
-  border-radius: 5px;
-  margin-bottom: 2%;
-} */
-
 .wrong-position {
   text-align: left;
   margin: 8px 0;
@@ -448,7 +439,6 @@ p {
 
 #form-controller {
   display: none;
-  width: 50%;
 }
 
 #name-controller {
