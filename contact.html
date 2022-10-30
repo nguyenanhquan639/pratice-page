@@ -83,18 +83,15 @@
     <!-- FORM SECTION -->
     <form action="" id="form" name="form">
       <div class="wrong-position">
-        <p id="form-controller" class="wrong-notif">
-          <i class="fa-solid fa-xmark"></i> Your form has encountered a problem.
-          Please scroll down to review.
-        </p>
+        <p class="wrong-notif"></p>
       </div>
 
-      <label for="">Name *</label>
+      <label class="label-controller">Name *</label>
       <div class="wrong-position">
-        <p id="name-controller" class="wrong-notif"></p>
+        <p class="wrong-notif"></p>
       </div>
       <div class="row-pos">
-        <div class="colum-pos" id="first-name-controller">
+        <div class="colum-pos">
           <input
             type="text"
             class="custom-input"
@@ -102,44 +99,32 @@
             name="firstname"
             value=""
           />
-          <label class="custom-sub-name">First name</label>
+          <label class="custom-sub-name">First Name</label>
         </div>
 
         <div style="width: 50%"></div>
 
-        <div class="colum-pos" id="last-name-controller">
-          <input
-            type="text"
-            class="custom-input"
-            id="last-name-input-controller"
-            name="lastname"
-            value=""
-          />
-          <label class="custom-sub-name">Last name</label>
+        <div class="colum-pos">
+          <input type="text" class="custom-input" name="lastname" value="" />
+          <label class="custom-sub-name">Last Name</label>
         </div>
       </div>
 
       <br />
 
       <div class="wrong-position">
-        <p class="wrong-notif" id="email-controller">
-          <i class="fa-solid fa-xmark"></i>
-        </p>
+        <p class="wrong-notif"></p>
       </div>
-      <label for="" style="margin-bottom: 15px">Email *</label>
+      <label class="label-controller" style="margin-bottom: 15px"
+        >Email *</label
+      >
       <div style="width: 100%">
-        <input
-          type="text"
-          class="custom-input"
-          id="email-input-controller"
-          name="email"
-          value=""
-        />
+        <input type="text" class="custom-input" name="email" value="" />
       </div>
 
       <br />
 
-      <label for="" style="margin-bottom: 15px">Service *</label>
+      <label style="margin-bottom: 15px">Service *</label>
       <div>
         <select name="" id="" class="custom-select">
           <option value="">Select</option>
@@ -153,24 +138,22 @@
       <br />
 
       <div class="wrong-position">
-        <p class="wrong-notif" style="width: 80%" id="descript-controller"></p>
+        <p class="wrong-notif"></p>
       </div>
-      <label for="" style="margin-bottom: 15px">Description of Project *</label>
+      <label class="label-controller" style="margin-bottom: 15px"
+        >Description of Project *</label
+      >
       <textarea
         name="description"
-        id="descript-input-controller"
         class="custom-textarea"
         aria-valuetext=""
       ></textarea>
 
       <br />
 
-      <label for="">Desired Project Completion Date *</label>
+      <label class="label-controller">Desired Project Completion Date *</label>
       <div class="wrong-position">
-        <p class="wrong-notif" style="width: 80%" id="date-controller">
-          <i class="fa-solid fa-xmark"></i> Desired Project Completion Date is
-          required.
-        </p>
+        <p class="wrong-notif"></p>
       </div>
       <div class="row-pos-date">
         <div class="colum-pos">
@@ -178,7 +161,7 @@
             type="text"
             class="custom-input-date"
             maxlength="2"
-            id="mm-input-controller"
+            name="month"
             value=""
           />
           <label class="custom-sub-name">MM</label>
@@ -191,7 +174,7 @@
             type="text"
             class="custom-input-date"
             maxlength="2"
-            id="dd-input-controller"
+            name="day"
             value=""
           />
           <label for="" class="custom-sub-name">DD</label>
@@ -204,7 +187,7 @@
             type="text"
             class="custom-input-date"
             maxlength="4"
-            id="yy-input-controller"
+            name="year"
             value=""
           />
           <label for="" class="custom-sub-name">YYYY</label>
@@ -216,7 +199,9 @@
       <button
         type="button"
         class="submit-btn"
-        onclick="checkValid(document.form.firstname, document.form.lastname, document.form.email, document.form.description)"
+        onclick="checkValid(document.form.firstname, 
+        document.form.lastname, document.form.email, document.form.description, 
+        document.form.day, document.form.month, document.form.year)"
       >
         SUBMIT
       </button>

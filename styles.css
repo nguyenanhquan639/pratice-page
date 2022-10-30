@@ -350,24 +350,20 @@ p {
 .custom-input {
   height: 40px;
   border-radius: 8px;
-  border: 2px solid gray;
+  border: 2px solid #bacb90;
   width: 100%;
   transition: 0.2s;
 }
 
-.custom-input-hover:hover {
-  border: 2px solid black;
-  box-shadow: 0px 0px 3px rgb(20, 19, 19);
-}
-
 .custom-sub-name {
   font-size: 80%;
+  margin-top: 5px;
 }
 
 .custom-select {
   width: 110%;
   height: 25px;
-  color: gray;
+  color: grey;
   font-size: 90%;
   border: 2px solid gray;
   border-radius: 8px;
@@ -376,7 +372,7 @@ p {
 
 .custom-textarea {
   border-radius: 8px;
-  border: 2px solid gray;
+  border: 2px solid #bacb90;
   transition: 0.1s;
   resize: vertical;
   width: 100%;
@@ -386,7 +382,7 @@ p {
 .custom-input-date {
   height: 40px;
   border-radius: 8px;
-  border: 2px solid gray;
+  border: 2px solid #bacb90;
   width: 60%;
   transition: 0.5s;
 }
@@ -435,9 +431,10 @@ p {
   font-size: 80%;
   padding: 0 20px 20px 10px;
   width: 100%;
+  display: none;
 }
 
-#form-controller {
+/* #form-controller {
   display: none;
 }
 
@@ -455,7 +452,7 @@ p {
 
 #date-controller {
   display: none;
-}
+} */
 
 @media only screen and (max-width: 750px) {
   #web-interfact {

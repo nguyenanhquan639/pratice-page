@@ -19,95 +19,129 @@ function closeNav() {
   document.getElementById("closebtn").style.display = "none";
 }
 
-function checkValid(firstname, lastname, email, description) {
+function checkValid(firstname, lastname, email, description, day, month, year) {
+  var subname = document.getElementsByClassName("custom-sub-name"); // subname = [First Name, Last Name, MM, DD, YY]
+  var input_box = document.getElementsByClassName("custom-input"); // input_box = [FN, LS, Email]
+  var wrong_notif = document.getElementsByClassName("wrong-notif"); // wrong_notif = [Form, Name, Email, Description, Date]
+  var label_controller = document.getElementsByClassName("label-controller"); // label_controller = [Name, Email, Description, Date]
+  var name = 0;
+  var mail = 0;
+  var des = 0;
+  var date = 0;
   // Check Name
   if (
     //first & last name missing
-    // document.getElementById("first-name-input-controller").value === "" &&
-    // document.getElementById("last-name-input-controller").value === ""
     firstname.value === "" &&
     lastname.value === ""
   ) {
-    document.getElementById("name-controller").style.display = "unset";
-    document.getElementById("name-controller").innerHTML =
+    name = 0;
+    label_controller[0].style.color = "#cc3b3b";
+    wrong_notif[1].style.display = "unset";
+    wrong_notif[1].innerHTML =
       "<i class='fa-solid fa-xmark'></i> Name is required.";
-    document.getElementById("first-name-controller").style.color = "#cc3b3b";
-    document.getElementById("first-name-input-controller").style.border =
-      "2px solid #cc3b3b";
-    document.getElementById("last-name-controller").style.color = "#cc3b3b";
-    document.getElementById("last-name-input-controller").style.border =
-      "2px solid #cc3b3b";
+    subname[0].style.color = "#cc3b3b";
+    input_box[0].style.border = "2px solid #cc3b3b";
+    subname[1].style.color = "#cc3b3b";
+    input_box[1].style.border = "2px solid #cc3b3b";
   } else if (
     //first name missing
-    document.getElementById("first-name-input-controller").value === ""
+    firstname.value === ""
   ) {
-    document.getElementById("name-controller").style.display = "unset";
-    document.getElementById("name-controller").innerHTML =
+    name = 0;
+    label_controller[0].style.color = "#cc3b3b";
+    wrong_notif[1].style.display = "unset";
+    wrong_notif[1].innerHTML =
       "<i class='fa-solid fa-xmark'></i> Name is missing required subfields: First Name";
-    document.getElementById("first-name-controller").style.color = "#cc3b3b";
-    document.getElementById("first-name-input-controller").style.border =
-      "2px solid #cc3b3b";
-    document.getElementById("last-name-controller").style.color = "gray";
-    document.getElementById("last-name-input-controller").style.border =
-      "2px solid gray";
+    subname[0].style.color = "#cc3b3b";
+    input_box[0].style.border = "2px solid #cc3b3b";
+    subname[1].style.color = "gray";
+    input_box[1].style.border = "2px solid #88b022";
   } else {
     //last name missing
-    document.getElementById("name-controller").style.display = "unset";
-    document.getElementById("name-controller").innerHTML =
+    name = 0;
+    label_controller[0].style.color = "#cc3b3b";
+    wrong_notif[1].style.display = "unset";
+    wrong_notif[1].innerHTML =
       "<i class='fa-solid fa-xmark'></i> Name is missing required subfields: Last Name";
-    document.getElementById("last-name-controller").style.color = "#cc3b3b";
-    document.getElementById("last-name-input-controller").style.border =
-      "2px solid #cc3b3b";
-    document.getElementById("first-name-controller").style.color = "gray";
-    document.getElementById("first-name-input-controller").style.border =
-      "2px solid gray";
+    subname[1].style.color = "#cc3b3b";
+    input_box[1].style.border = "2px solid #cc3b3b";
+    subname[0].style.color = "gray";
+    input_box[0].style.border = "2px solid #88b022";
   }
   //refresh style
   if (firstname.value !== "" && lastname.value !== "") {
-    document.getElementById("name-controller").style.display = "none";
-    document.getElementById("last-name-controller").style.color = "gray";
-    document.getElementById("last-name-input-controller").style.border =
-      "2px solid gray";
-    document.getElementById("first-name-controller").style.color = "gray";
-    document.getElementById("first-name-input-controller").style.border =
-      "2px solid gray";
+    name = 1;
+    label_controller[0].style.color = "gray";
+    wrong_notif[1].style.display = "none";
+    for (i = 0; i < 2; i++) {
+      subname[i].style.color = "gray";
+      input_box[i].style.border = "2px solid #88b022";
+    }
   }
 
   //Check Email
   var emailFormat = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
   if (email.value === "") {
     //check missing
-    document.getElementById("email-controller").style.display = "unset";
-    document.getElementById("email-controller").innerHTML =
+    mail = 0;
+    wrong_notif[2].style.display = "unset";
+    wrong_notif[2].innerHTML =
       "<i class='fa-solid fa-xmark'></i> Email is required.";
-    document.getElementById("email-input-controller").style.border =
-      "2px solid #cc3b3b";
+    input_box[2].style.border = "2px solid #cc3b3b";
   } else if (email.value.match(emailFormat)) {
     //right format
-    document.getElementById("email-controller").style.display = "none";
-    document.getElementById("email-input-controller").style.border =
-      "2px solid grey";
+    mail = 1;
+    wrong_notif[2].style.display = "none";
+    input_box[2].style.border = "2px solid #88b022";
   } else {
     //wrong format
-    document.getElementById("email-controller").style.display = "unset";
-    document.getElementById("email-controller").innerHTML =
+    mail = 0;
+    wrong_notif[2].style.display = "unset";
+    wrong_notif[2].innerHTML =
       "<i class='fa-solid fa-xmark'></i> Email is not valid. Email addresses should follow the format User@domain.com.";
-    document.getElementById("email-input-controller").style.border =
-      "2px solid #cc3b3b";
+    input_box[2].style.border = "2px solid #cc3b3b";
   }
 
   //Check Description
   if (description.value === "") {
     //check missing
-    document.getElementById("descript-controller").style.display = "unset";
-    document.getElementById("descript-controller").innerHTML =
+
+    wrong_notif[3].style.display = "unset";
+    wrong_notif[3].innerHTML =
       "<i class='fa-solid fa-xmark'></i> Description of Project is required.";
-    document.getElementById("descript-input-controller").style.border =
+    document.getElementsByName("description")[0].style.border =
       "2px solid #cc3b3b";
+    des = 0;
   } else {
     //refresh
-    document.getElementById("descript-controller").style.display = "none";
-    document.getElementById("descript-input-controller").style.border =
-      "2px solid gray";
+
+    wrong_notif[3].style.display = "none";
+    document.getElementsByName("description")[0].style.border =
+      "2px solid #88b022";
+    des = 1;
+  }
+
+  //Check Date
+  var date_box = document.getElementsByClassName("custom-input-date"); // date_box = [month, day, year]
+  //check missing
+  if (day.value === "" && month.value === "" && year.value === "") {
+    wrong_notif[4].style.display = "unset";
+    wrong_notif[4].innerHTML =
+      "<i class='fa-solid fa-xmark'></i> Desired Project Completion Date is required.";
+    for (i = 0; i < 3; i++) {
+      date_box[i].style.border = "2px solid #cc3b3b";
+    }
+    for (let i = 2; i < 5; i++) {
+      subname[i].style.color = "#cc3b3b";
+    }
+  }
+
+  //Check form
+  if (name === 0 || des === 0 || mail === 0) {
+    wrong_notif[0].style.display = "unset";
+    wrong_notif[0].innerHTML =
+      "<i class='fa-solid fa-xmark'></i> Your form has encountered a problem. Please scroll down to review.";
+  } else {
+    wrong_notif[0].style.display = "none";
   }
 }
