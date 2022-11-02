@@ -22,26 +22,29 @@
   </head>
   <body>
     <!-- HEAD SECTION -->
+    <!-- SIDE NAV -->
+    <div id="mySidenav" class="sidenav">
+      <a class="nav-btn" href="index.html">HOME</a>
+      <div class="nav-btn" onclick="changeNav()">
+        SERVICES <i class="fa-solid fa-chevron-right"></i>
+      </div>
+      <a class="nav-btn" href="about.html">ABOUT</a>
+      <a class="nav-btn" href="contact.html">CONTACT</a>
+
+      <div id="mySidenav-2" class="sidenav">
+        <div class="nav-btn" onclick="unchangeNav()">
+          <i class="fa-solid fa-arrow-left-long"></i> BACK
+        </div>
+        <a class="nav-btn" href="calligraphy.html"><b>CALLIGRAPHY</b></a>
+        <a class="nav-btn" href="portrait.html"><b>PORTRAIT ART</b></a>
+        <a class="nav-btn" href="pyrography.html"><b>PYROGRAPHY</b></a>
+      </div>
+    </div>
+    <!-- SIDE NAV -->
+
     <div id="logo-section">
-      <a href="index.html"><img id="logo" src="./images/weblogo.png" /></a>
-
-      <!-- SIDE NAV -->
-      <div id="mySidenav" class="sidenav">
-        <a class="nav-btn" href="index.html">HOME</a>
-        <div class="nav-btn" onclick="changeNav()">
-          SERVICES <i class="fa-solid fa-chevron-right"></i>
-        </div>
-        <a class="nav-btn" href="about.html">ABOUT</a>
-        <a class="nav-btn" href="contact.html">CONTACT</a>
-
-        <div id="mySidenav-2" class="sidenav">
-          <div class="nav-btn" onclick="unchangeNav()">
-            <i class="fa-solid fa-arrow-left-long"></i> BACK
-          </div>
-          <a class="nav-btn" href="calligraphy.html"><b>CALLIGRAPHY</b></a>
-          <a class="nav-btn" href="portrait.html"><b>PORTRAIT ART</b></a>
-          <a class="nav-btn" href="pyrography.html"><b>PYROGRAPHY</b></a>
-        </div>
+      <div>
+        <a href="index.html"><img id="logo" src="./images/weblogo.png" /></a>
       </div>
 
       <span
@@ -57,8 +60,6 @@
         onclick="closeNav()"
         ><i class="fa-solid fa-x"></i
       ></span>
-
-      <!-- SIDE NAV -->
     </div>
 
     <div id="top-bar">

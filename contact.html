@@ -14,6 +14,10 @@
     <!-- FONT -->
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
+    <!-- Moment Function -->
+
     <script
       src="https://kit.fontawesome.com/be15bfe2c6.js"
       crossorigin="anonymous"
@@ -22,26 +26,29 @@
   </head>
 
   <body>
+    <!-- SIDE NAV -->
+    <div id="mySidenav" class="sidenav">
+      <a class="nav-btn" href="index.html">HOME</a>
+      <div class="nav-btn" onclick="changeNav()">
+        SERVICES <i class="fa-solid fa-chevron-right"></i>
+      </div>
+      <a class="nav-btn" href="about.html">ABOUT</a>
+      <a class="nav-btn" href="contact.html">CONTACT</a>
+
+      <div id="mySidenav-2" class="sidenav">
+        <div class="nav-btn" onclick="unchangeNav()">
+          <i class="fa-solid fa-arrow-left-long"></i> BACK
+        </div>
+        <a class="nav-btn" href="calligraphy.html"><b>CALLIGRAPHY</b></a>
+        <a class="nav-btn" href="portrait.html"><b>PORTRAIT ART</b></a>
+        <a class="nav-btn" href="pyrography.html"><b>PYROGRAPHY</b></a>
+      </div>
+    </div>
+    <!-- SIDE NAV -->
+
     <div id="logo-section">
-      <a href="index.html"><img id="logo" src="./images/weblogo.png" /></a>
-
-      <!-- SIDE NAV -->
-      <div id="mySidenav" class="sidenav">
-        <a class="nav-btn" href="index.html">HOME</a>
-        <div class="nav-btn" onclick="changeNav()">
-          SERVICES <i class="fa-solid fa-chevron-right"></i>
-        </div>
-        <a class="nav-btn" href="about.html">ABOUT</a>
-        <a class="nav-btn" href="contact.html">CONTACT</a>
-
-        <div id="mySidenav-2" class="sidenav">
-          <div class="nav-btn" onclick="unchangeNav()">
-            <i class="fa-solid fa-arrow-left-long"></i> BACK
-          </div>
-          <a class="nav-btn" href="calligraphy.html"><b>CALLIGRAPHY</b></a>
-          <a class="nav-btn" href="portrait.html"><b>PORTRAIT ART</b></a>
-          <a class="nav-btn" href="pyrography.html"><b>PYROGRAPHY</b></a>
-        </div>
+      <div>
+        <a href="index.html"><img id="logo" src="./images/weblogo.png" /></a>
       </div>
 
       <span
@@ -57,7 +64,6 @@
         onclick="closeNav()"
         ><i class="fa-solid fa-x"></i
       ></span>
-      <!-- SIDE NAV -->
     </div>
 
     <div id="top-bar">
@@ -81,7 +87,14 @@
     </div>
 
     <!-- FORM SECTION -->
-    <form action="" id="form" name="form">
+    <form
+      action="thanks.html"
+      id="form"
+      name="form"
+      onsubmit="return checkValid(document.form.firstname, 
+    document.form.lastname, document.form.email, document.form.description, 
+    document.form.day, document.form.month, document.form.year)"
+    >
       <div class="wrong-position">
         <p class="wrong-notif"></p>
       </div>
@@ -196,15 +209,7 @@
 
       <br />
 
-      <button
-        type="button"
-        class="submit-btn"
-        onclick="checkValid(document.form.firstname, 
-        document.form.lastname, document.form.email, document.form.description, 
-        document.form.day, document.form.month, document.form.year)"
-      >
-        SUBMIT
-      </button>
+      <button type="submit" class="submit-btn">SUBMIT</button>
 
       <br />
     </form>

@@ -28,6 +28,7 @@ function checkValid(firstname, lastname, email, description, day, month, year) {
   var mail = 0;
   var des = 0;
   var date = 0;
+
   // Check Name
   if (
     //first & last name missing
@@ -84,17 +85,20 @@ function checkValid(firstname, lastname, email, description, day, month, year) {
   if (email.value === "") {
     //check missing
     mail = 0;
+    label_controller[1].style.color = "#cc3b3b";
     wrong_notif[2].style.display = "unset";
     wrong_notif[2].innerHTML =
       "<i class='fa-solid fa-xmark'></i> Email is required.";
     input_box[2].style.border = "2px solid #cc3b3b";
   } else if (email.value.match(emailFormat)) {
     //right format
+    label_controller[1].style.color = "gray";
     mail = 1;
     wrong_notif[2].style.display = "none";
     input_box[2].style.border = "2px solid #88b022";
   } else {
     //wrong format
+    label_controller[1].style.color = "#cc3b3b";
     mail = 0;
     wrong_notif[2].style.display = "unset";
     wrong_notif[2].innerHTML =
@@ -105,7 +109,7 @@ function checkValid(firstname, lastname, email, description, day, month, year) {
   //Check Description
   if (description.value === "") {
     //check missing
-
+    label_controller[2].style.color = "#cc3b3b";
     wrong_notif[3].style.display = "unset";
     wrong_notif[3].innerHTML =
       "<i class='fa-solid fa-xmark'></i> Description of Project is required.";
@@ -114,7 +118,7 @@ function checkValid(firstname, lastname, email, description, day, month, year) {
     des = 0;
   } else {
     //refresh
-
+    label_controller[2].style.color = "gray";
     wrong_notif[3].style.display = "none";
     document.getElementsByName("description")[0].style.border =
       "2px solid #88b022";
@@ -123,25 +127,182 @@ function checkValid(firstname, lastname, email, description, day, month, year) {
 
   //Check Date
   var date_box = document.getElementsByClassName("custom-input-date"); // date_box = [month, day, year]
-  //check missing
+  var cas = 0;
+  //-------------------- Check Case ------------------------------//
   if (day.value === "" && month.value === "" && year.value === "") {
-    wrong_notif[4].style.display = "unset";
-    wrong_notif[4].innerHTML =
-      "<i class='fa-solid fa-xmark'></i> Desired Project Completion Date is required.";
-    for (i = 0; i < 3; i++) {
-      date_box[i].style.border = "2px solid #cc3b3b";
-    }
-    for (let i = 2; i < 5; i++) {
-      subname[i].style.color = "#cc3b3b";
-    }
+    cas = 1;
+  }
+
+  if (day.value !== "" && month.value === "" && year.value === "") {
+    cas = 2;
+  }
+
+  if (day.value !== "" && month.value !== "" && year.value === "") {
+    cas = 3;
+  }
+
+  if (day.value === "" && month.value !== "" && year.value === "") {
+    cas = 4;
+  }
+
+  if (day.value === "" && month.value !== "" && year.value !== "") {
+    cas = 5;
+  }
+
+  if (day.value !== "" && month.value === "" && year.value !== "") {
+    cas = 6;
+  }
+
+  if (day.value !== "" && month.value !== "" && year.value !== "") {
+    cas = 7;
+  }
+
+  //-------------------- Case Action ------------------------------//
+  switch (cas) {
+    case 1: //All missing
+      date = 0;
+      label_controller[3].style.color = "#cc3b3b";
+      wrong_notif[4].style.display = "unset";
+      wrong_notif[4].innerHTML =
+        "<i class='fa-solid fa-xmark'></i> Desired Project Completion Date is required.";
+      for (i = 0; i < 3; i++) {
+        date_box[i].style.border = "2px solid #cc3b3b";
+      }
+      for (let i = 2; i < 5; i++) {
+        subname[i].style.color = "#cc3b3b";
+      }
+      break;
+
+    case 2: //Month, Year null
+      date = 0;
+      label_controller[3].style.color = "#cc3b3b";
+      wrong_notif[4].style.display = "unset";
+      wrong_notif[4].innerHTML =
+        "<i class='fa-solid fa-xmark'></i> Desired Project Completion Date is missing required subfields: Month, Year";
+      date_box[0].style.border = "2px solid #cc3b3b";
+      subname[2].style.color = "#cc3b3b";
+      date_box[2].style.border = "2px solid #cc3b3b";
+      subname[4].style.color = "#cc3b3b";
+      date_box[1].style.border = "2px solid #88b022";
+      subname[3].style.color = "gray";
+      break;
+
+    case 3: //Year null
+      date = 0;
+      label_controller[3].style.color = "#cc3b3b";
+      wrong_notif[4].style.display = "unset";
+      wrong_notif[4].innerHTML =
+        "<i class='fa-solid fa-xmark'></i> Desired Project Completion Date is missing required subfields: Year";
+      date_box[0].style.border = "2px solid #88b022";
+      subname[2].style.color = "gray";
+      date_box[2].style.border = "2px solid #cc3b3b";
+      subname[4].style.color = "#cc3b3b";
+      date_box[1].style.border = "2px solid #88b022";
+      subname[3].style.color = "gray";
+      break;
+
+    case 4: //Day, Year null
+      date = 0;
+      label_controller[3].style.color = "#cc3b3b";
+      wrong_notif[4].style.display = "unset";
+      wrong_notif[4].innerHTML =
+        "<i class='fa-solid fa-xmark'></i> Desired Project Completion Date is missing required subfields: Day, Month";
+      date_box[1].style.border = "2px solid #cc3b3b";
+      subname[3].style.color = "#cc3b3b";
+      date_box[2].style.border = "2px solid #cc3b3b";
+      subname[4].style.color = "#cc3b3b";
+      date_box[0].style.border = "2px solid #88b022";
+      subname[2].style.color = "gray";
+      break;
+
+    case 5: //Day null
+      date = 0;
+      label_controller[3].style.color = "#cc3b3b";
+      wrong_notif[4].style.display = "unset";
+      wrong_notif[4].innerHTML =
+        "<i class='fa-solid fa-xmark'></i> Desired Project Completion Date is missing required subfields: Day";
+      date_box[1].style.border = "2px solid #cc3b3b";
+      subname[3].style.color = "#cc3b3b";
+      date_box[0].style.border = "2px solid #88b022";
+      subname[2].style.color = "gray";
+      date_box[2].style.border = "2px solid #88b022";
+      subname[4].style.color = "gray";
+      break;
+
+    case 6: //Month null
+      date = 0;
+      label_controller[3].style.color = "#cc3b3b";
+      wrong_notif[4].style.display = "unset";
+      wrong_notif[4].innerHTML =
+        "<i class='fa-solid fa-xmark'></i> Desired Project Completion Date is missing required subfields: Month";
+      date_box[1].style.border = "2px solid #88b022";
+      subname[3].style.color = "gray";
+      date_box[0].style.border = "2px solid #cc3b3b";
+      subname[2].style.color = "#cc3b3b";
+      date_box[2].style.border = "2px solid #88b022";
+      subname[4].style.color = "gray";
+      break;
+
+    case 7: //Nothing null
+      if (year.value.length < 4) {
+        date = 1;
+        label_controller[3].style.color = "#cc3b3b";
+        wrong_notif[4].style.display = "unset";
+        wrong_notif[4].innerHTML =
+          "<i class='fa-solid fa-xmark'></i> Desired Project Completion Date: Year is not valid. Value should be 4 characters long.";
+        for (i = 0; i < 3; i++) {
+          date_box[i].style.border = "2px solid #cc3b3b";
+        }
+        for (let i = 2; i < 5; i++) {
+          subname[i].style.color = "#cc3b3b";
+        }
+        break;
+      } else {
+        date = month.value + "/" + day.value + "/" + year.value;
+        console.log(date);
+        if (
+          moment(date, "MM/DD/YYYY", true).isValid() ||
+          moment(date, "M/DD/YYYY", true).isValid() ||
+          moment(date, "M/D/YYYY", true).isValid() ||
+          moment(date, "MM/D/YYYY", true).isValid()
+        ) {
+          date = 1;
+          label_controller[3].style.color = "gray";
+          wrong_notif[4].style.display = "none";
+          for (i = 0; i < 3; i++) {
+            date_box[i].style.border = "2px solid #88b022";
+          }
+          for (let i = 2; i < 5; i++) {
+            subname[i].style.color = "gray";
+          }
+        } else {
+          date = 0;
+          label_controller[3].style.color = "#cc3b3b";
+          wrong_notif[4].style.display = "unset";
+          wrong_notif[4].innerHTML =
+            "<i class='fa-solid fa-xmark'></i> Desired Project Completion Date is not valid. This is not a real date.";
+          for (i = 0; i < 3; i++) {
+            date_box[i].style.border = "2px solid #cc3b3b";
+          }
+          for (let i = 2; i < 5; i++) {
+            subname[i].style.color = "#cc3b3b";
+          }
+          break;
+        }
+      }
+
+    default:
+      break;
   }
 
   //Check form
-  if (name === 0 || des === 0 || mail === 0) {
+  if (name === 0 || des === 0 || mail === 0 || date === 0) {
     wrong_notif[0].style.display = "unset";
     wrong_notif[0].innerHTML =
       "<i class='fa-solid fa-xmark'></i> Your form has encountered a problem. Please scroll down to review.";
+    return false;
   } else {
     wrong_notif[0].style.display = "none";
+    return true;
   }
 }

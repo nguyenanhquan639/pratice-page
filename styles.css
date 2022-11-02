@@ -17,6 +17,7 @@ body {
 
 #logo-section {
   display: flex;
+  justify-content: center;
 }
 
 .sidenav {
@@ -434,26 +435,6 @@ p {
   display: none;
 }
 
-/* #form-controller {
-  display: none;
-}
-
-#name-controller {
-  display: none;
-}
-
-#email-controller {
-  display: none;
-}
-
-#descript-controller {
-  display: none;
-}
-
-#date-controller {
-  display: none;
-} */
-
 @media only screen and (max-width: 750px) {
   #web-interfact {
     display: none;
@@ -557,7 +538,13 @@ p {
   .sidenav {
     display: unset;
   }
-}
 
-@media screen and (max-width: 780px) {
+  #footer-tag {
+    font-size: 110%;
+  }
+
+  #footer-name {
+    font-size: 130%;
+    margin-bottom: 2%;
+  }
 }

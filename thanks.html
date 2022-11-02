@@ -14,15 +14,18 @@
     <!-- FONT -->
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
+    <!-- Moment Function -->
+
     <script
       src="https://kit.fontawesome.com/be15bfe2c6.js"
       crossorigin="anonymous"
     ></script>
-    <title>Pyrography - Kristen Lee Calligraphy Clone</title>
-    <link rel="icon" href="/images/favicon.png" />
+    <title>Contact - Kristen Lee Calligraphy Clone</title>
   </head>
+
   <body>
-    <!-- HEAD SECTION -->
     <!-- SIDE NAV -->
     <div id="mySidenav" class="sidenav">
       <a class="nav-btn" href="index.html">HOME</a>
@@ -68,7 +71,7 @@
         <a href="index.html" class="top-btn">HOME</a>
       </div>
       <div class="top-control-item" id="dropdown">
-        <a href="calligraphy.html" class="top-btn">SERVICES</a>
+        <a href="calligraphy.html" class="top-btn" id="hold-hover">SERVICES</a>
         <div id="dropdown-content">
           <a href="calligraphy.html"><b>CALLIGRAPHY</b></a>
           <a href="portrait.html"><b>PORTRAIT ART</b></a>
@@ -82,39 +85,10 @@
         <a href="contact.html" class="top-btn">CONTACT</a>
       </div>
     </div>
-
-    <!-- BODY SECTION -->
-    <div class="calli-para-center">
-      <p>
-        The art of burning an image on paper, wood, or leather that is then
-        sealed with a protective varnish. Not often seen, it’s a unique way
-        capture an image or personalize a special item.
-      </p>
-    </div>
-
-    <div id="web-interfact">
-      <img class="portrait-img-bot" src="./images/guitar-1.jpg" />
-      <img class="portrait-img-bot" src="./images/guitar-2.jpg" />
-      <img class="portrait-img-bot" src="./images/guitar-3.jpg" />
-      <img class="portrait-img-bot" src="./images/guitar-4.jpg" />
-    </div>
-
-    <div id="mobile-interfact">
-      <div class="mobile-img">
-        <img class="portrait-img-bot" src="./images/guitar-1.jpg" />
-        <img class="portrait-img-bot" src="./images/guitar-2.jpg" />
-      </div>
-      <div class="mobile-img">
-        <img class="portrait-img-bot" src="./images/guitar-3.jpg" />
-        <img class="portrait-img-bot" src="./images/guitar-4.jpg" />
-      </div>
-    </div>
-
-    <div id="bot-control">
-      <a class="bot-btn" href="">INQUIRE</a>
-    </div>
+    <p>THANK YOU</p>
+    <br />
+    <img src="./images/thankyou.jpg" id="thankyou-img" />
   </body>
-  <!-- FOOTER SECTION -->
   <footer>
     <hr class="custom-line" />
 
@@ -143,11 +117,7 @@
 
     <div id="footer">
       <p id="footer-name">© 2019 Kristen Lee Calligraphy</p>
-      <a
-        class="custom-icon"
-        id="footer-tag"
-        href="https://www.bearbranded.com/"
-        target="_blank"
+      <a id="footer-tag" href="https://www.bearbranded.com/" target="_blank"
         >Bear Branded Website #builtbybears</a
       >
     </div>
