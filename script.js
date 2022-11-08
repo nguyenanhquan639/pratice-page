@@ -19,6 +19,37 @@ function closeNav() {
   document.getElementById("closebtn").style.display = "none";
 }
 
+//SLider
+var slideIndex = 0;
+
+function nextPic(n) {
+  var slides = document.getElementsByClassName("mySlides");
+  slideIndex += n;
+  if (slideIndex === slides.length) {
+    slideIndex = 0;
+  }
+
+  if (slideIndex < 0) {
+    slideIndex = 2;
+  }
+
+  for (let index = 0; index < slides.length; index++) {
+    slides[index].style.display = "none";
+  }
+
+  switch (slideIndex) {
+    case 0:
+      slides[0].style.display = "unset";
+      break;
+    case 1:
+      slides[1].style.display = "unset";
+      break;
+    case 2:
+      slides[2].style.display = "unset";
+      break;
+  }
+}
+
 function checkValid(firstname, lastname, email, description, day, month, year) {
   var subname = document.getElementsByClassName("custom-sub-name"); // subname = [First Name, Last Name, MM, DD, YY]
   var input_box = document.getElementsByClassName("custom-input"); // input_box = [FN, LS, Email]

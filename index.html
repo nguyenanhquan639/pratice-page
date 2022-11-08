@@ -19,7 +19,7 @@
       crossorigin="anonymous"
     ></script>
     <title>Kristen Lee Calligraphy Clone</title>
-    <link rel="icon" href="/images/favicon.ico" />
+    <link rel="icon" href="/images/favicon.png" />
   </head>
   <body>
     <!-- SIDE NAV -->
@@ -91,8 +91,21 @@
       </p>
     </div>
 
-    <div>
-      <img src="images/picture-2.jpg" class="picture" height="600" />
+    <div class="slide-container">
+      <div class="mySlides fade">
+        <img src="images/picture-2.jpg" class="picture" height="600" />
+      </div>
+
+      <div class="mySlides fade" style="display: none">
+        <img src="images/slide-pic-2.jpg" class="picture" height="600" />
+      </div>
+
+      <div class="mySlides fade" style="display: none">
+        <img src="images/slide-pic-3.jpg" class="picture" height="600" />
+      </div>
+
+      <span class="prev" onclick="nextPic(-1)">❮</span>
+      <span class="next" onclick="nextPic(1)">❯</span>
     </div>
 
     <div id="quote-2">

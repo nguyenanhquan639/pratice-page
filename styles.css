@@ -86,6 +86,48 @@ body {
   margin: 0 2%;
 }
 
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  width: auto;
+  padding: 10px 20px;
+  position: absolute;
+  color: black;
+  font-weight: bold;
+  font-size: 140%;
+  transition: 0.6s ease;
+  user-select: none;
+  text-shadow: 0px 0px 6px black;
+  border-radius: 50%;
+}
+
+.next {
+  right: 6%;
+}
+
+.prev {
+  left: 6%;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: gray;
+}
+
 /* --- DROP DOWN --- */
 #dropdown {
   position: relative;
